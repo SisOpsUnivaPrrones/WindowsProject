@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace PantallaLogin
@@ -32,17 +33,7 @@ namespace PantallaLogin
             Frame.Navigate(typeof(RegistrarPage));
         }
 
-        MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
-
-        myConnectionString = "server=127.0.0.1;uid=root;pwd="";database=test";
-
-        try{
-            conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-            conn.Open();
-        }catch (MySql.Data.MySqlClient.MySqlException ex){
-                MessageBox.Show(ex.Message);
-        }
+        
 
      }
         
