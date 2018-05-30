@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="PantallaLogin.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PantallaLogin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationForegroundThemeBrush}">
+        <Grid VerticalAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="8" Padding="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox Name="txtUsuario" PlaceholderText="Usuario" Grid.Row="0" Margin="8"></TextBox>
+            <PasswordBox Name="txtPassword" PlaceholderText="Contraseña" Grid.Row="1" Margin="8"></PasswordBox>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnIngresar" Content="Ingresar" Grid.Column="0" HorizontalAlignment="Stretch"></Button>
+                <Button Name="btnRegistrar" Content="Registrar" Grid.Column="1" 
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource AccentButtonBackground}"
+                        Foreground="{ThemeResource AccentButtonForeground}"
+                        Click="btnRegistrar_Click">                    
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

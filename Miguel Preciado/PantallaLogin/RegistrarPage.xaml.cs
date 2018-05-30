@@ -13,28 +13,34 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace PantallaLogin
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class RegistrarPage : Page
     {
-        public MainPage()
+        public RegistrarPage()
         {
             this.InitializeComponent();
         }
 
-        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(RegistrarPage));
+            Frame.Navigate(typeof(MainPage));
         }
 
-        
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            /*String usuario = txtUsuario.Text;
+            String pass = txtPassword.Password;
+            String confPass = txtConfirmaPassword.Password;
+            if(pass != confPass)
+            {
 
-     }
-        
+            }*/
+        }
+    }
 }

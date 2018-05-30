@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace PantallaLogin
@@ -33,8 +32,11 @@ namespace PantallaLogin
             Frame.Navigate(typeof(RegistrarPage));
         }
 
-        
-
-     }
-        
+        private void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            /*String usuario = txtUsuario.Text;
+            String pass = txtPassword.Password;*/
+            
+        }
+    }
 }
