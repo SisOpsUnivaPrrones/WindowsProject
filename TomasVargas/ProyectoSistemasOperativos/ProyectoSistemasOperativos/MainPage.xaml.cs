@@ -22,20 +22,21 @@ namespace ProyectoSistemasOperativos
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
-        {
+        public MainPage(){
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            String[][] posiblesUsuarios = { { "admin", "admin" },
-            { "", "" },
-            { "", "" }};
+        private void Button_Click(object sender, RoutedEventArgs e){
+            String[,] posiblesUsuarios = new string[,] { { "admin", "password" },{ "usuario", "contrasena" },{ "", "" }};
             String usuario, password;
             usuario = txtUsuario.Text;
             password = txtPassword.Password;
 
+
+        }
+
+        private void btnCrearUsuario_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
