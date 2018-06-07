@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,9 +24,12 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        ConexMySQL conex;
+
         public MainPage()
         {
             this.InitializeComponent();
+            conex = new ConexMySQL();
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -33,8 +37,19 @@ namespace PantallaLogin
             Frame.Navigate(typeof(RegistrarPage));
         }
 
-        
+        private async void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            if (conex.ValidarUsuario(txtUsuario.Text, txtPassword.Password)){
+                var message = new MessageDialog("Login exitoso");
+                await message.ShowAsync();
+            }
+            else
+            {
+                var message = new MessageDialog("Login fallido");
+                await message.ShowAsync();
+            }
 
-     }
+        }
+    }
         
 }

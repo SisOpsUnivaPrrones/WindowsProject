@@ -11,9 +11,9 @@ namespace PantallaLogin
          
        public MySqlConnection conn;
        public ConexMySQL(){
-            conn = new MySqlConnection("server=localhost;user=root;database=world;port=3306;password=''");
+            conn = new MySqlConnection("server=localhost;Uid=root;database=soperativos;port=3306;password=''");
        }
-
+    
         public void CrearUsuario(string usuario, string password)
         {
             conn.Open();
