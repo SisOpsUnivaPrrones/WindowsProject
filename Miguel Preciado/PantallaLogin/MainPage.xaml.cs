@@ -34,9 +34,11 @@ namespace PantallaLogin
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
-            /*String usuario = txtUsuario.Text;
-            String pass = txtPassword.Password;*/
-            
+            string usuario = txtUsuario.Text;
+            string pass = txtPassword.Password;
+            pass = Encriptar.CrearMD5(pass+"123");
+            //comparar pass(hash) con hash en mysql (Cosulta)
+
         }
     }
 }

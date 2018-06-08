@@ -27,6 +27,11 @@
                         HorizontalAlignment="Stretch"
                         Background="{ThemeResource AccentButtonBackground}"
                         Foreground="{ThemeResource AccentButtonForeground}" Click="btnGuardar_Click">
+                    <FlyoutBase.AttachedFlyout>
+                        <Flyout>
+                            <TextBlock Text="Las contraseñas no concuerdan."  />
+                        </Flyout>
+                    </FlyoutBase.AttachedFlyout>
                 </Button>
                 <Button Name="btnCancelar" Content="Cancelar" Grid.Column="1" 
                         HorizontalAlignment="Stretch"

@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace PantallaLogin
@@ -34,13 +33,19 @@ namespace PantallaLogin
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            /*String usuario = txtUsuario.Text;
-            String pass = txtPassword.Password;
-            String confPass = txtConfirmaPassword.Password;
+            string usuario = txtUsuario.Text;
+            string pass = txtPassword.Password;
+            string confPass = txtConfirmaPassword.Password;
             if(pass != confPass)
             {
-
-            }*/
+                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+            }
+            else
+            {
+                pass = Encriptar.CrearMD5(pass+"123");
+                //subir usuario y pass (hashed) a mysql
+                Frame.Navigate(typeof(MainPage));
+            }
         }
     }
 }

@@ -22,6 +22,10 @@ namespace PantallaLogin
     /// </summary>
     sealed partial class App : Application
     {
+        private string connectionString =
+        @"Data Source=DESKTOP-6JVV43S\MPV\SQLEXPRESS;Initial Catalog=usuarios;Integrated Security=SSPI";
+
+        public string ConnectionString { get => connectionString; set => connectionString = value; }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
