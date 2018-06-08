@@ -26,7 +26,7 @@
                 <Button Name="btnGuardar" Content="Guardar" Grid.Column="0" 
                         HorizontalAlignment="Stretch"
                         Background="{ThemeResource AccentButtonBackground}"
-                        Foreground="{ThemeResource AccentButtonForeground}">
+                        Foreground="{ThemeResource AccentButtonForeground}" Click="btnGuardar_Click">
                 </Button>
                 <Button Name="btnCancelar" Content="Cancelar" Grid.Column="1" 
                         HorizontalAlignment="Stretch"
