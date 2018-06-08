@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -12,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +26,16 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        ///ConexMySQL conex;
+        Conex con;
+      
+
         public MainPage()
         {
             this.InitializeComponent();
+            //conex = new ConexMySQL();
+            con = new Conex();
+            
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -32,18 +43,22 @@ namespace PantallaLogin
             Frame.Navigate(typeof(RegistrarPage));
         }
 
-        MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
+        private async void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
 
-        myConnectionString = "server=127.0.0.1;uid=root;pwd="";database=test";
+            
 
-        try{
-            conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-            conn.Open();
-        }catch (MySql.Data.MySqlClient.MySqlException ex){
-                MessageBox.Show(ex.Message);
+            if (con.ValidarUsuario(txtUsuario.Text, txtPassword.Password)){
+                var message = new MessageDialog("Login exitoso");
+                await message.ShowAsync();
+            }
+            else
+            {
+                var message = new MessageDialog("Login fallido");
+                await message.ShowAsync();
+            }
+
         }
-
-     }
+    }
         
 }

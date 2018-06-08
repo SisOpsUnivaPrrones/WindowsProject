@@ -9,11 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="btnInicioSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="282,451,0,0" VerticalAlignment="Top" FontFamily="Global User Interface" FontSize="22" Click="Button_Click"/>
+        <Button x:Name="btnInicioSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="282,451,0,0" VerticalAlignment="Top" FontFamily="Global User Interface" FontSize="22" Click="Button_Click" Width="191"/>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="282,248,0,0" Width="382"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="282,360,0,0" VerticalAlignment="Top" Width="382"/>
         <TextBlock HorizontalAlignment="Left" Margin="282,208,0,0" Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Global User Interface" FontSize="22"/>
         <TextBlock HorizontalAlignment="Left" Margin="282,322,0,0" Text="Contraseña" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Global User Interface" FontSize="22"/>
+        <Button x:Name="btnCrearUsuario" Content="Registrar Usuario" HorizontalAlignment="Left"  Margin="283,517,0,0" VerticalAlignment="Top" FontSize="22" Width="190" HorizontalContentAlignment="Center" Click="btnCrearUsuario_Click"/>
 
     </Grid>
 </Page>
