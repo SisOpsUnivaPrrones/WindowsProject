@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,12 +26,16 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        ConexMySQL conex;
+        ///ConexMySQL conex;
+        Conex con;
+      
 
         public MainPage()
         {
             this.InitializeComponent();
-            conex = new ConexMySQL();
+            //conex = new ConexMySQL();
+            con = new Conex();
+            
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -39,7 +45,10 @@ namespace PantallaLogin
 
         private async void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
-            if (conex.ValidarUsuario(txtUsuario.Text, txtPassword.Password)){
+
+            
+
+            if (con.ValidarUsuario(txtUsuario.Text, txtPassword.Password)){
                 var message = new MessageDialog("Login exitoso");
                 await message.ShowAsync();
             }
