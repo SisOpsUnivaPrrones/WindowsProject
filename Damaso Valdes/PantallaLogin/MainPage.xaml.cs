@@ -36,6 +36,7 @@ namespace PantallaLogin
             MySqlConnection conn = new MySqlConnection("server = localhost; user id = root; password = Checocampeon#F1 ;database = Login");
             string query = "select count(*) from Usuarios where nombre = '" + txtUsuario.Text + "' and pswd= '" + txtPassword.Password + "'";
             MySqlCommand com = new MySqlCommand(query, conn);
+
             //MySqlDataAdapter sda = new MySqlDataAdapter("select count(*) from Usuarios where nombre = '" + txtUsuario.Text + "' and pswd= '" + txtPassword.Password + "'", conn);
             //DataTable dt = new DataTable();
             /**
