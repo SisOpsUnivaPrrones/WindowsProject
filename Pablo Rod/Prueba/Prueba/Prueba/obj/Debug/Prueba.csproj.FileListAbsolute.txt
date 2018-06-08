@@ -1,0 +1,23 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.exe.config
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\bin\Debug\MySql.Data.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\bin\Debug\MySql.Data.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.pdb
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\bin\Debug\Prueba.exe.config
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\bin\Debug\Prueba.exe
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\bin\Debug\Prueba.pdb
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\bin\Debug\MySql.Data.xml
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.csprojAssemblyReference.cache
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.csproj.GenerateResource.cache
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.csproj.CoreCompileInputs.cache
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.csproj.CopyComplete
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.exe
+C:\Users\skor\Downloads\Prueba\Prueba\Prueba\obj\Debug\Prueba.pdb
