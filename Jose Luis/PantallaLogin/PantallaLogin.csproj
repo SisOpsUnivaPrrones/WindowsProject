@@ -97,7 +97,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Conex.cs" />
-    <Compile Include="ConexMySQL.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -138,10 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.2.3</Version>
-    </PackageReference>
-    <PackageReference Include="MySql.Data">
-      <Version>6.10.7</Version>
+      <Version>6.1.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace PantallaLogin
     sealed partial class App : Application
     {
 
-        public string ConnectionString { get; set; } = @"Data Source=S11-9\MSSQLDATOS\\SQLEXPRESS;Initial Catalog=soperativos;Integrated Security=False";
+       
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

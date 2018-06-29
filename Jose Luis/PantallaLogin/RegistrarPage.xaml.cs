@@ -23,11 +23,11 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class RegistrarPage : Page
     {
-        ConexMySQL conex;
+        
         public RegistrarPage()
         {
             this.InitializeComponent();
-            conex = new ConexMySQL();
+           
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -39,7 +39,7 @@ namespace PantallaLogin
         {
             if(txtPassword.Password == txtConfirmaPassword.Password)
             {
-                conex.CrearUsuario(txtUsuario.Text.Trim(), txtPassword.Password);
+                //conex.CrearUsuario(txtUsuario.Text.Trim(), txtPassword.Password);
                 var message = new MessageDialog("Registro exitoso");
                 await message.ShowAsync();
             }
