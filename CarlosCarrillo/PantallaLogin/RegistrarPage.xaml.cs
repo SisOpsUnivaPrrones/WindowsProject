@@ -31,5 +31,11 @@ namespace PantallaLogin
         {
             Frame.Navigate(typeof(MainPage));
         }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            ConexionMSSQL con = new ConexionMSSQL();
+            con.CrearUsuario(txtUsuario.Text, txtPassword.Password);
+        }
     }
 }
