@@ -22,11 +22,12 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class RegistrarPage : Page
     {
-        
+        Conex con;
         public RegistrarPage()
         {
             this.InitializeComponent();
-           
+            con = new Conex();
+
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -38,7 +39,7 @@ namespace PantallaLogin
         {
             if(txtPassword.Password == txtConfirmaPassword.Password)
             {
-                //conex.CrearUsuario(txtUsuario.Text.Trim(), txtPassword.Password);
+                con.CrearUsuario(txtUsuario.Text.Trim(), txtPassword.Password);
                 var message = new MessageDialog("Registro exitoso");
                 await message.ShowAsync();
             }

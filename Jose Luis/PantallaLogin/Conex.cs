@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Threading;
+using Windows.UI.Popups;
 
 namespace PantallaLogin
 {
@@ -14,26 +15,46 @@ namespace PantallaLogin
 
         public Conex()
         {
-            conn = new SqlConnection("Data Source=S11-9\\MSSQLDATOS\\SQLEXPRESS;Initial Catalog=soperativos; Integrated Security=False");
+            conn = new SqlConnection("server=S11-9\\MSSQLDATOS\\SQLEXPRESS;Initial Catalog=soperativos; Integrated Security=False;");
         }
 
         public void CrearUsuario(string usuario, string password)
         {
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Insert into usuarios values usuario=" + usuario + "," + "password=" + password;
-            cmd.ExecuteNonQuery();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "Insert into usuarios values (" + usuario + "," + "HASHBYTES('MD5'," + "'" +password+ "'))";
+                cmd.ExecuteNonQuery();
+            }
+           
+             catch (Exception ex)
+            {
+                var message = new MessageDialog("Error de conexion");
+            }
+           
             conn.Close();
         }
 
         public bool ValidarUsuario(string usuario, string pass)
         {
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select *from usuarios where usuario =" + usuario + "and password=" + pass;
-            bool result = cmd.ExecuteReader().GetEnumerator().MoveNext();
-            conn.Close();
-            return result;
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "Select *from usuarios where usuario =" + usuario + "and password=" + pass;
+                bool result = cmd.ExecuteReader().GetEnumerator().MoveNext();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                var message = new MessageDialog("error de conexion");
+                return false;
+            }
+           
+            
         }
     }
 }
