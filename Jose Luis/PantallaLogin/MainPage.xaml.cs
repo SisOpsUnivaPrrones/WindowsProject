@@ -24,7 +24,7 @@ namespace PantallaLogin
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        ///ConexMySQL conex;
+        ///ConexSQL conex;
         Conex con;
       
 
