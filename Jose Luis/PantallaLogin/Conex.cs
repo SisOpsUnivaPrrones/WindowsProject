@@ -24,10 +24,11 @@ namespace PantallaLogin
         public void CrearUsuario(string usuario, string password)
         {
 
-          
-                conn.Open();
+            MD5 md5Hash = MD5.Create();
+            string newPass = GetMd5Hash(md5Hash, password);
+            conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "Insert into usuarios values ('" + usuario + "',HASHBYTES('MD5','" + password+"'))";
+                cmd.CommandText = "Insert into usuarios values ('" + usuario + "','" + newPass+"')";
                 cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -39,7 +40,7 @@ namespace PantallaLogin
             conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "Select *from usuarios where nombre ='" + usuario + "' and pass='" + newPass +"'";
-                bool result = cmd.ExecuteReader().GetEnumerator().MoveNext();
+                bool result =cmd.ExecuteReader().GetEnumerator().MoveNext();
                 conn.Close();
                 return result;
             
