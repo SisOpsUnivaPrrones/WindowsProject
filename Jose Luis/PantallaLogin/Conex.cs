@@ -8,6 +8,8 @@ using System.Threading;
 using Windows.UI.Popups;
 using System.Security.Cryptography;
 
+
+
 namespace PantallaLogin
 {
     class Conex
@@ -16,25 +18,27 @@ namespace PantallaLogin
 
         public Conex()
         {
-           conn = new SqlConnection("Data Source=S11-9\\MSSQLDATOS\\SQLEXPRESS;Initial Catalog=soperativos; Integrated Security=SSPI;;");
-          // conn = new SqlConnection("Data Source=192.168.53.197;" +"Initial Catalog=soperativos;" +"User id=SA;" +"Password=Qwer1234;");
+           //conn = new SqlConnection("Data Source=S11-9\\MSSQLDATOS\\SQLEXPRESS;Initial Catalog=soperativos; Integrated Security=SSPI;;");
+          conn = new SqlConnection("Data Source=192.168.53.197;" +"Initial Catalog=soperativos;" +"User id=SA;" +"Password=Qwer1234;");
 
         }
 
         public void CrearUsuario(string usuario, string password)
         {
-
+           
             MD5 md5Hash = MD5.Create();
             string newPass = GetMd5Hash(md5Hash, password);
             conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "Insert into usuarios values ('" + usuario + "','" + newPass+"')";
                 cmd.ExecuteNonQuery();
+         
             conn.Close();
         }
 
         public bool ValidarUsuario(string usuario, string pass)
         {
+            
             MD5 md5Hash = MD5.Create();
             string newPass = GetMd5Hash(md5Hash, pass);
             conn.Open();
@@ -42,10 +46,8 @@ namespace PantallaLogin
                 cmd.CommandText = "Select *from usuarios where nombre ='" + usuario + "' and pass='" + newPass +"'";
                 bool result =cmd.ExecuteReader().GetEnumerator().MoveNext();
                 conn.Close();
-                return result;
-            
            
-            
+            return result;
         }
 
         public static string GetMd5Hash(MD5 md5Hash, string input)
@@ -68,5 +70,7 @@ namespace PantallaLogin
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+
+        
     }
 }

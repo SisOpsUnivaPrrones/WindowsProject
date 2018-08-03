@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -37,10 +38,20 @@ namespace PantallaLogin
 
         private async void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if(txtPassword.Password == txtConfirmaPassword.Password)
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            if (txtPassword.Password == txtConfirmaPassword.Password)
             {
                 con.CrearUsuario(txtUsuario.Text.Trim(), txtPassword.Password);
-                var message = new MessageDialog("Registro exitoso");
+                stopWatch.Stop();
+                // Get the elapsed time as a TimeSpan value.
+                TimeSpan ts = stopWatch.Elapsed;
+
+                // Format and display the TimeSpan value.
+                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                    ts.Hours, ts.Minutes, ts.Seconds,
+                    ts.Milliseconds / 10);
+                var message = new MessageDialog("Registro exitoso "+ elapsedTime);
                 await message.ShowAsync();
             }
             else
